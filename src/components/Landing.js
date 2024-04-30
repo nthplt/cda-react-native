@@ -84,7 +84,7 @@ const Landing = () => {
         {actualForecast
           .map((res, mapIndex) => {
             return (
-              <View keyExtractor={(res, index) => index.toString()} style={styles.bottomInfoView}>
+              <View keyExtractor={mapIndex} style={styles.bottomInfoView}>
                 <Image style={styles.bottomWeatherIcon} source={{ uri: "https:" + res.day.condition.icon }} />
                 <Text style={{ fontWeight: 600 }}>{daysOfWeek[(currentDay + mapIndex + 1) % 7]}</Text>
                 <Text style={{ fontWeight: 600 }}>{res.day.avgtemp_c}°C</Text>
